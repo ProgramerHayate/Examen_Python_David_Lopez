@@ -33,20 +33,21 @@ def split(dic):
     contRed = 1
     contWhite = 1
     for dato in dic:
-        if dato["type"] == "white":
-            del dato["type"]
-            dicWhite["dato"+str(contWhite)] = dato
+        
+        if dic[dato]["type"] == "white":
+            del dic[dato]["type"]
+            dicWhite["dato"+str(contWhite)] = dic[dato]
             contWhite = contWhite + 1
-        elif dato["type"] == "red":
-            del dato["type"]
-            dicRed["dato"+str(contRed)] = dato
+        elif dic[dato]["type"] == "red":
+            del dic[dato]["type"]
+            dicRed["dato"+str(contRed)] = dic[dato]
             contRed = contRed + 1
     return dicRed, dicWhite
     
 def reduce(dic,string):
     lista = list()
     for dato in dic:
-        if string in dato:
-            lista.append(dato[string])
+        if string in dic[dato]:
+            lista.append(dic[dato][string])
 
     return lista
