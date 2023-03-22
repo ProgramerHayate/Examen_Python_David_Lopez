@@ -12,3 +12,6 @@ try:
     print(functions.reduce(dicRed,"alcohol"))
 except ValueError:
    print("ha ocurrido la excepción ValueError en reduce")
+list1 = [1, 2, 3, 4, 5]
+list2 = [5, 4, 3, 2, 1]
+print(functions.silhouette(list1,list2))

@@ -62,14 +62,27 @@ def silhouette(list1,list2):
     bi = list()
     medai = 0.0
     medbi = 0.0
+    silhouetteVal = 0.0
 
     for i in list1:
         for j in list1:
             if j != i:
-                ai.append(math.sqrt(math.pow(abs(i-j))))
+                medai= medai + math.sqrt(math.pow(abs(i-j),2))
+        medai = medai/len(list1)
+        ai.append(medai)
+    
 
     for i in list1:
         for j in list2:
-            bi.append(math.sqrt(math.pow(abs(i-j))))
+            medbi= medbi + math.sqrt(math.pow(abs(i-j),2))
+        medbi = medbi/len(list1)
+        bi.append(medbi)
+
+    for i in len(ai):
+        Si.append((bi[i]-ai[i])/(max(ai[i],bi[i])))
+    for i in Si:
+        silhouetteVal = silhouetteVal + i
+    silhouetteVal = silhouetteVal/len(Si)
+
+    return silhouetteVal
     
-  
