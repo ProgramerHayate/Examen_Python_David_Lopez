@@ -24,7 +24,7 @@ def read_data(fich):
             cont = cont + 1
     
     if cont_lineas < 10:
-        raise ValueError("ha ocurrido la expección ValueErrror")
+        raise ValueError("ha ocurrido la exepción ValueErrror en read_data")
     return dic1
 
 def split(dic):
@@ -46,8 +46,18 @@ def split(dic):
     
 def reduce(dic,string):
     lista = list()
+
     for dato in dic:
         if string in dic[dato]:
             lista.append(dic[dato][string])
+        else:
+            raise ValueError("ha ocurrido la excepción ValueError en reduce")
+    
 
     return lista
+def silhouette(list1,list2):
+    Si = list()
+    ai = list()
+    bi = list()
+
+    #for i in list1:
