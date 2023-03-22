@@ -50,7 +50,7 @@ def reduce(dic,string):
 
     for dato in dic:
         if string in dic[dato]:
-            lista.append(dic[dato][string])
+            lista.append(float(dic[dato][string]))
         else:
             raise ValueError("ha ocurrido la excepción ValueError en reduce")
     
@@ -78,7 +78,7 @@ def silhouette(list1,list2):
         medbi = medbi/len(list1)
         bi.append(medbi)
 
-    for i in len(ai):
+    for i in range(len(ai)):
         Si.append((bi[i]-ai[i])/(max(ai[i],bi[i])))
     for i in Si:
         silhouetteVal = silhouetteVal + i
