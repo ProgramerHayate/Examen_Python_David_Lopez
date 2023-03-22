@@ -1,4 +1,5 @@
 import csv
+import math
 
 
 def read_data(fich):
@@ -59,5 +60,16 @@ def silhouette(list1,list2):
     Si = list()
     ai = list()
     bi = list()
+    medai = 0.0
+    medbi = 0.0
 
-    #for i in list1:
+    for i in list1:
+        for j in list1:
+            if j != i:
+                ai.append(math.sqrt(math.pow(abs(i-j))))
+
+    for i in list1:
+        for j in list2:
+            bi.append(math.sqrt(math.pow(abs(i-j))))
+    
+  
